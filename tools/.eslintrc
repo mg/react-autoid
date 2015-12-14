@@ -1,0 +1,19 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "eol-last": 0,
+    "no-unused-vars": 0,
+    "no-underscore-dangle": 0,
+    "new-cap": 0,
+    "dot-notation": 0,
+    "no-use-before-define": 0,
+    "prefer-template": 1,
+    "constructor-super": 1,
+  }
+}
