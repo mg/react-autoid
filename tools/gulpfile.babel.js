@@ -6,6 +6,7 @@ import eslint from'gulp-eslint'
 import babel from 'gulp-babel'
 import replace from 'gulp-replace'
 import ignore from 'gulp-ignore'
+import clean from 'gulp-clean'
 
 const conf= {
   src: ['../src/**/*.js', '../src/**/*.jsx'],
@@ -24,6 +25,10 @@ gulp.task('test-watch', () => {
 
 gulp.task('lint', () => {
   runSequence('eslint')
+})
+
+gulp.task('compile', () => {
+  runSequence('clean', 'compilejs')
 })
 
 // tasks
@@ -56,7 +61,8 @@ gulp.task('mocha', () => {
   }))
 })
 
-gulp.task('compile', () => {
+gulp.task('compilejs', () => {
+  process.env.NODE_ENV= 'production'
   return gulp.src(conf.src)
     .pipe(ignore.exclude('**/*.spec.*'))
     .pipe(babel({
@@ -64,4 +70,9 @@ gulp.task('compile', () => {
     }))
     .pipe(replace(/\.jsx/g, '.js'))
     .pipe(gulp.dest(conf.dest));
+})
+
+gulp.task('clean', () => {
+  return gulp.src(conf.dest + '/*')
+    .pipe(clean({force: true}))
 })
