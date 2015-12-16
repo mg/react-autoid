@@ -1,6 +1,6 @@
 {
   "name": "react-autoid",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Auto generate id's to associate labels with inputs",
   "main": "lib/index.js",
   "scripts": {
