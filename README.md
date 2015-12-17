@@ -1,4 +1,6 @@
 # react-autoid
+[![Build Status](https://travis-ci.org/mg/react-autoid.svg)](https://travis-ci.org/mg/react-autoid)
+[![npm version](https://badge.fury.io/js/react-autoid.svg)](https://badge.fury.io/js/react-autoid)
 
 Decorator to auto-generate ID's for input elements and their associated labels.
 
