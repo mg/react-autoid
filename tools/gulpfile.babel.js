@@ -6,7 +6,7 @@ import eslint from'gulp-eslint'
 import babel from 'gulp-babel'
 import replace from 'gulp-replace'
 import ignore from 'gulp-ignore'
-import clean from 'gulp-clean'
+import del from 'del'
 
 const conf= {
   src: ['../src/**/*.js', '../src/**/*.jsx'],
@@ -73,6 +73,7 @@ gulp.task('compilejs', () => {
 })
 
 gulp.task('clean', () => {
-  return gulp.src(conf.dest + '/*')
-    .pipe(clean({force: true}))
+  return del([
+    '../lib/**/*',
+  ], {force: true})
 })
